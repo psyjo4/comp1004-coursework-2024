@@ -18,19 +18,30 @@
         <nav aria-label="Main navigation">
             <ul class="nav-links">
                 <li><a class="active" href="#">People Search</a></li>
-                <li><a href="#">Vehicle Search</a></li>
-                <li><a href="#">Add a Vehicle</a></li>
+                <li><a href="vehicle.html">Vehicle Search</a></li>
+                <li><a href="register.html">Add a Vehicle</a></li>
             </ul>
         </nav>
     </header>
 
     <aside class="sidebar">
         <!-- ~~~~~ Sidebar ~~~~~ -->
-        <img class="databse-Logo"src="../images/database-icon.png" alt="Database Icon">
+        <img class="database-logo"src="../images/database-icon.png" alt="Database Icon">
     </aside>
 
     <main class="main-content">
         <!-- ~~~~~ Main ~~~~~ -->
+        <form method="get" action="search">
+            <fieldset>
+                <label for="driverName">Search by driver name:</label>
+                <input type="text" id="driverName" placeholder="Rachel Smith..." name="driverName">
+                
+                <label for="driverLicence">Search by driver licence number:</label>
+                <input type="text" id="driverLicence" placeholder="SG345PQ..." name="driverLicence">
+                
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
     </main>
 
     <footer>

@@ -1,6 +1,7 @@
 :root {
     --primary-color: #eb5e28;
-    --secondary-color: #CCC5B9;
+    --second-color: #403d39;
+    --third-color: #ccc5b9;
     --background-color: #FFFCF2;
     --text-color: #252422;
 }
@@ -18,7 +19,7 @@ body {
       "sidebar main main main"
       "footer footer footer footer";
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto 1fr auto ;
+    grid-template-rows: auto 1fr auto;
     height: 100vh;
 
     gap: 5px; /* Adjust gap to the width of the border */
@@ -29,6 +30,7 @@ body {
     font-size: 22px;
     color: var(--text-color);
 }
+
 
 /* ~~~~~ Header ~~~~~ */
 header {
@@ -67,7 +69,8 @@ nav {
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus {
     color: var(--background-color);
     box-shadow: inset 200px 0 0 0 var(--primary-color);
 }
@@ -75,8 +78,9 @@ nav {
 .nav-links a.active {
     color: var(--background-color);
     text-decoration: none;
-    box-shadow: inset 200px 0 0 0 var(--text-color)
+    box-shadow: inset 200px 0 0 0 var(--second-color);
 }
+
 
 /* ~~~~~ Sidebar ~~~~~ */
 .sidebar {
@@ -86,15 +90,47 @@ nav {
     padding: 1rem 2rem;
 }
 
-.databse-Logo {
+.database-logo {
     width: 100%; /* Makes the image responsive */
     height: auto; /* Maintains the aspect ratio */
     max-width: 100%; /* Prevents the image from exceeding the sidebar's width */
 }
 
+
 /* ~~~~~ Main ~~~~~ */
 .main-content {
     grid-area: main;
+    padding: 1rem 2rem;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    display: block; /* Makes the label take the full width */
+    margin: 0.5rem 0; /* Adds some space above and below each label */
+}
+
+input[type="text"] {
+    border: solid 3px var(--text-color);
+    background-color: var(--third-color);
+    box-sizing: border-box;
+    font-size: 1rem;
+    width: 100%; /* Makes the input take the full width of its parent */
+    padding: .5rem; /* Adds some padding inside the input */
+}
+
+input[type="submit"] {
+    border: solid 3px var(--text-color);
+    background-color: var(--primary-color);
+    display: block;
+    margin: 1rem auto; /* Centers the submit button horizontally */
+    padding: 0.5rem 2rem; /* Adds padding inside the button */
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95); /* Slightly scale down the button */
 }
 
 /* ~~~~~ Footer ~~~~~ */
