@@ -1,3 +1,11 @@
+/*
+#fffcf2 Floral White
+#ccc5b9 Timberwolf
+#403d39 Black Olive
+#252422 Eerie Black
+#eb5e28 Flame
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -88,3 +96,7 @@ form input[type=submit] {
     padding: .5rem;
 }
 
+footer p {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
