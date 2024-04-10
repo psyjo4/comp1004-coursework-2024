@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: #FFFCF2;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+      "header header header header"
+      "sidebar main main main"
+      "footer footer footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto ;
+    height: 100vh;
+
+    gap: 5px; /* Adjust gap to the width of the border */
+    background-color: #252422; /* This will fill the gap with black color */
+
+    font-family: monospace;
+    font-weight: 400;
+    font-size: 22px;
+    color: #252422;
+}
+
+/* ~~~~~ Header ~~~~~ */
+header {
+    grid-area: header;
+    padding: 1rem 2rem;
+}
+
+h1.header-title {
+    text-align: center; /* Centers the text within the element */
+    margin: 0 auto; /* Removes default margin and sets auto margin on both sides */
+    width: 100%; /* Ensures the h1 element occupies the full width of its container */
+}
+
+nav {
+    width: 100%; /* Ensures the nav element takes the full width */
+    text-align: center; /* Centers the content */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.nav-links li {
+    padding: .5rem;
+}
+
+.nav-links a {
+    color: #eb5e28;
+    font-weight: 400;
+    font-size: 22px;
+    box-shadow: inset 0 0 0 0 #eb5e28;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #fffcf2;
+    box-shadow: inset 200px 0 0 0 #eb5e28;;
+}
+
+.nav-links a.active {
+    color: #fffcf2;
+    font-weight: 400;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: inset 200px 0 0 0 #403D39;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+/* ~~~~~ Sidebar ~~~~~ */
+.sidebar {
+    grid-area: sidebar;
+    min-width: 0; /* This can help with overflowing content in some cases */
+    max-width: 100%; /* Prevents the sidebar from exceeding its grid area */
+    padding: 1rem 2rem;
+}
+
+.sidebar-img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 100%; /* Prevents the image from exceeding the sidebar's width */
+}
+
+/* ~~~~~ Main ~~~~~ */
+.main-content {
+    grid-area: main;
+}
+
+/* ~~~~~ Footer ~~~~~ */
+footer {
+    grid-area: footer;
+    padding: 1rem 2rem;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .nav-links li {
+        width: 100%; /* Make each link full width to stack them vertically */
+    }
+
+    /* Center the text of the links */
+    .nav-links a {
+        width: 100%;
+        text-align: center; /* Center the text inside the anchor tags */
+    }
+}
