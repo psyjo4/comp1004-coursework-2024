@@ -9,6 +9,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     background-color: var(--background-color);
 }
 
@@ -20,7 +21,7 @@ body {
       "footer footer footer footer";
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
+    min-height: 100vh;
 
     gap: 5px; /* Adjust gap to the width of the border */
     background-color: var(--text-color); /* This will fill the gap with black color */
@@ -29,6 +30,8 @@ body {
     font-weight: 400;
     font-size: 20px;
     color: var(--text-color);
+
+    overflow-x: hidden;
 }
 
 
@@ -142,6 +145,16 @@ input[type="submit"]:active {
     justify-content: center;
     border: 3px dashed var(--text-color); /* Adjust the color and size as needed */
     padding: 10px; /* Adds some space inside the div */
+}
+
+#results.multiple-results {
+    display: block;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.person-result {
+    margin-bottom: 1rem; /* Adjust the value as needed for desired spacing */
 }
 
 /* ~~~~~ Footer ~~~~~ */

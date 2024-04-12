@@ -8,27 +8,35 @@ async function searchByDriverName(name) {
     const { data, error } = await supabase
         .from('People')
         .select('*')
-        .eq('Name', name);
+        .ilike('Name', `%${name}%`);
+        // .eq('Name', name);
+
+    const resultDiv = document.getElementById('results');
 
     if (error) {
         console.log('error', error);
+        resultDiv.innerHTML = `<p>An error occurred. Please try again.</p>`;
+        resultDiv.classList.remove('multiple-results');
     } 
+    else if (data.length === 0){
+        console.log('no data', data);
+        resultDiv.innerHTML = `<p>No results found.</p>`;
+        resultDiv.classList.remove('multiple-results');
+    }
     else {
         console.log('data', data);
-        if (data.length > 0) {
-            const person = data[0]; // Assuming you want to display the first result
-            const resultDiv = document.getElementById('results');
-            resultDiv.innerHTML = `
+        let resultsHTML = data.map(person => `
+            <div class="person-result">
                 <p><strong>Name:</strong> ${person.Name}</p>
                 <p><strong>Address:</strong> ${person.Address}</p>
                 <p><strong>DOB:</strong> ${person.DOB}</p>
                 <p><strong>Expiry Date:</strong> ${person.ExpiryDate}</p>
                 <p><strong>License Number:</strong> ${person.LicenseNumber}</p>
                 <p><strong>Person ID:</strong> ${person.PersonID}</p>
-            `;
-        } else {
-            document.getElementById('results').innerHTML = '<p>No results found.</p>';
-        }
+            </div>
+        `).join('');
+        resultDiv.innerHTML = resultsHTML;
+        resultDiv.classList.add('multiple-results');
     }
 }
 
