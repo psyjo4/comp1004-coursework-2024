@@ -27,7 +27,7 @@ body {
 
     font-family: monospace;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 20px;
     color: var(--text-color);
 }
 
@@ -101,6 +101,8 @@ nav {
 .main-content {
     grid-area: main;
     padding: 1rem 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 fieldset {
@@ -131,6 +133,15 @@ input[type="submit"] {
 
 input[type="submit"]:active {
     transform: scale(0.95); /* Slightly scale down the button */
+}
+
+#results {
+    grid-row: 2;
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: center;
+    border: 3px dashed var(--text-color); /* Adjust the color and size as needed */
+    padding: 10px; /* Adds some space inside the div */
 }
 
 /* ~~~~~ Footer ~~~~~ */
