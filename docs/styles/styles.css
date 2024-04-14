@@ -141,6 +141,18 @@ input[type="submit"]:active {
     transform: scale(0.95); /* Slightly scale down the button */
 }
 
+select {
+    border: solid 3px var(--text-color);
+    background-color: var(--third-color);
+    padding: 0.5rem 2rem; /* Adds padding inside the button */
+}
+
+input[type="date"] {
+    border: solid 3px var(--text-color);
+    background-color: var(--third-color);
+    padding: 0.5rem 2rem; /* Adds padding inside the button */
+}
+
 #results {
     grid-row: 2;
     display: flex;

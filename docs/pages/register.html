@@ -31,6 +31,47 @@
 
     <main class="main-content">
         <!-- ~~~~~ Main ~~~~~ -->
+        <form id="add-vehicle-form">
+            <fieldset>
+                <label for="vehicle-id">Registration Number:</label>
+                <input type="text" id="vehicle-id" name="vehicle-id" required>
+                
+                <label for="make">Make:</label>
+                <input type="text" id="make" name="make" required>
+                
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required>
+                
+                <label for="colour">Colour:</label>
+                <input type="text" id="colour" name="colour" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="person-id">Select Owner (if existing):</label>
+                <select id="person-id" name="person-id">
+                    <option value="">Select an owner...</option>
+                    <!-- Options populated dynamically from database -->
+                </select>
+
+                <label>Or add new owner:</label>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+                
+                <label for="dob">DOB:</label>
+                <input type="date" id="dob" name="dob">
+                
+                <label for="license-number">License Number:</label>
+                <input type="text" id="license-number" name="license-number">
+                
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="date" id="expiry-date" name="expiry-date">
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
     </main>
 
     <footer>
