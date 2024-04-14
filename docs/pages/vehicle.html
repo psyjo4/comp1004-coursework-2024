@@ -10,6 +10,7 @@
 
     <!-- ~~~~~ Links ~~~~~ -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../scripts/vehicle-search.js" type="module" defer></script>
 </head>
 <body>
     <header>
@@ -31,6 +32,16 @@
 
     <main class="main-content">
         <!-- ~~~~~ Main ~~~~~ -->
+        <form method="get" id="vehicle-search-form">
+            <fieldset>
+                <label for="registration-number">Enter vehicle registration number:</label>
+                <input type="text" id="registration-number" placeholder="GHT56FN..." name="registration-number">
+                <input type="submit" value="Search">
+            </fieldset>
+        </form>
+        <div id="results">
+            <p>Please enter a search.</p>
+        </div>
     </main>
 
     <footer>
