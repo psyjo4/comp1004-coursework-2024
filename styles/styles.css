@@ -1,7 +1,8 @@
 :root {
     /* Deffine color pallet for simple modification */
-    /* --primary-color: #eb5e28; */
-    --primary-color: rgb(255, 60, 0);
+    /* --primary-color: #eb5e28;  ** commented out due to this color falling the accessibility test */
+    --primary-color: #AD1010;
+    --primary-color-2: #F46666;
     --second-color: #403d39;
     --third-color: #ccc5b9;
     --background-color: #FFFCF2;
@@ -151,7 +152,7 @@ input[type="text"] {
 
 input[type="submit"] {
     border: solid 2px var(--text-color);
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-2);
     display: block;
     margin: 0.25rem auto; /* Centers the submit button horizontally */
     padding: 0.5rem 2rem; /* Adds padding inside the button */
@@ -163,7 +164,7 @@ input[type="submit"]:active {
 
 #add-owner-button {
     border: solid 2px var(--text-color);
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-2);
     display: block;
     margin: 0.25rem auto; /* Centers the submit button horizontally */
     padding: 0.5rem 2rem; /* Adds padding inside the button */
