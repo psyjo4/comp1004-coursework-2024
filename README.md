@@ -56,5 +56,5 @@ During Playwright testing, the following issue was encountered:
 2. **Test**: `coursework-sample.spec.js:93:1 › header should have padding 10px, margin 10px, and border 1px solid black`
     - **Suggested changes**: I managed to change my CSS code to pass this test; however, I feel it limited the creativity of the styling... also because the complete requirements were given to use so late, I had to redo my whole website styling. I have attached a screenshot of my website before these restrictions.
     - **Original Styling**:
-    ![Screenshot-1](images/Screenshot%202024-05-17%20at%2012.50.12.png)
-    ![Screenshot-2](images/Screenshot%202024-05-17%20at%2012.50.19.png)
+    ![Screenshot-1](/images/Screenshot%202024-05-17%20at%2012.50.12.png)
+    ![Screenshot-2](/images/Screenshot%202024-05-17%20at%2012.50.19.png)
