@@ -1,5 +1,7 @@
 :root {
-    --primary-color: #eb5e28;
+    /* Deffine color pallet for simple modification */
+    /* --primary-color: #eb5e28; */
+    --primary-color: rgb(255, 60, 0);
     --second-color: #403d39;
     --third-color: #ccc5b9;
     --background-color: #FFFCF2;
@@ -7,46 +9,56 @@
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    background-color: var(--background-color);
-
+    /* Style scroll bar */
     scrollbar-width: thin;
     scrollbar-color: var(--primary-color) var(--third-color);
 }
 
 body {
-    display: grid;
-    grid-template-areas:
-      "header header header header"
-      "sidebar main main main"
-      "footer footer footer footer";
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
+    /* Set background color */
+    background-color: var(--background-color);
 
-    gap: 5px; /* Adjust gap to the width of the border */
-    background-color: var(--text-color); /* This will fill the gap with black color */
-
+    /* Set font */
     font-family: monospace;
     font-weight: 400;
     font-size: 22px;
     color: var(--text-color);
 
+    /* Lock x axis scrolling */
     overflow-x: hidden;
 }
 
+#container {
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "sidebar main main main"
+        "footer footer footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 
-/* ~~~~~ Header ~~~~~ */
-header {
-    grid-area: header;
-    padding: 1rem 2rem;
+    grid-gap: 10px;
+    padding: 10px;
 }
 
-h1.header-title {
+/* Requirement 4 */
+header, .sidebar, .main-content, footer {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+
+
+
+header {
+    grid-area: header;
+}
+
+header h1 {
     text-align: center; /* Centers the text within the element */
-    margin: 0 auto; /* Removes default margin and sets auto margin on both sides */
 }
 
 nav {
@@ -54,19 +66,16 @@ nav {
     text-align: center; /* Centers the content */
 }
 
-.nav-links {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-  
-.nav-links li {
-    padding: .5rem;
+nav ul {
+    display: flex; /* Use Flexbox for horizontal layout */
+    justify-content: space-between; /* Space between items */
+    list-style-type: none;
+    padding: 0.25rem;
+    margin: 0.5rem;
 }
 
-.nav-links a {
+/* Set nav styles */
+nav ul li a {
     color: var(--primary-color);
     font-weight: 400;
     font-size: 22px;
@@ -75,65 +84,76 @@ nav {
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
+/* Set hover nav styles */
+nav ul li a:hover,
+nav ul li a:focus {
     color: var(--background-color);
     box-shadow: inset 200px 0 0 0 var(--primary-color);
 }
 
-.nav-links a.active {
+/* Set active nav styles */
+nav ul li a.active {
     color: var(--background-color);
     text-decoration: none;
     box-shadow: inset 200px 0 0 0 var(--second-color);
 }
 
 
-/* ~~~~~ Sidebar ~~~~~ */
+
+
 .sidebar {
     grid-area: sidebar;
     min-width: 0; /* This can help with overflowing content in some cases */
     max-width: 100%; /* Prevents the sidebar from exceeding its grid area */
-    padding: 1rem 2rem;
 }
 
 .database-logo {
     width: 100%; /* Makes the image responsive */
     height: auto; /* Maintains the aspect ratio */
     max-width: 100%; /* Prevents the image from exceeding the sidebar's width */
+    margin: 1rem 0;
 }
 
 
-/* ~~~~~ Main ~~~~~ */
+
+
+
 .main-content {
     grid-area: main;
-    padding: 1rem 2rem;
-    display: grid;
-    grid-template-rows: auto 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 fieldset {
     border: none;
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+}
+#add-owner {
+    border: none;
+    margin: 0;
+    padding: 0.25rem 0.5rem;
 }
 
 label {
     display: block; /* Makes the label take the full width */
-    margin: 0.5rem 0; /* Adds some space above and below each label */
+    margin: 0.5rem 0rem 0.25rem 0; /* Adds some space above and below each label */
 }
 
 input[type="text"] {
-    border: solid 3px var(--text-color);
+    border: solid 2px var(--text-color);
     background-color: var(--third-color);
     box-sizing: border-box;
     font-size: 1rem;
     width: 100%; /* Makes the input take the full width of its parent */
-    padding: .5rem; /* Adds some padding inside the input */
+    padding: 0.5rem; /* Adds some padding inside the input */
 }
 
 input[type="submit"] {
-    border: solid 3px var(--text-color);
+    border: solid 2px var(--text-color);
     background-color: var(--primary-color);
     display: block;
-    margin: 1rem auto; /* Centers the submit button horizontally */
+    margin: 0.25rem auto; /* Centers the submit button horizontally */
     padding: 0.5rem 2rem; /* Adds padding inside the button */
 }
 
@@ -141,57 +161,73 @@ input[type="submit"]:active {
     transform: scale(0.95); /* Slightly scale down the button */
 }
 
+#add-owner-button {
+    border: solid 2px var(--text-color);
+    background-color: var(--primary-color);
+    display: block;
+    margin: 0.25rem auto; /* Centers the submit button horizontally */
+    padding: 0.5rem 2rem; /* Adds padding inside the button */
+}
+
+#add-owner-button {
+    transform: scale(0.95); /* Slightly scale down the button */
+}
+
 select {
-    border: solid 3px var(--text-color);
+    border: solid 2px var(--text-color);
     background-color: var(--third-color);
     padding: 0.5rem 2rem; /* Adds padding inside the button */
 }
 
 input[type="date"] {
-    border: solid 3px var(--text-color);
+    border: solid 2px var(--text-color);
     background-color: var(--third-color);
     padding: 0.5rem 2rem; /* Adds padding inside the button */
 }
 
+#message {
+    border: 2px dashed var(--text-color); /* Adjust the color and size as needed */
+    margin: 0.25rem 0.5rem;
+    padding: 0.25rem 0.5rem; /* Adds some space inside the div */
+}
+
 #results {
-    grid-row: 2;
-    display: flex;
-    align-items: center; /* Vertical alignment */
-    justify-content: center;
-    border: 3px dashed var(--text-color); /* Adjust the color and size as needed */
-    padding: 0.5rem; /* Adds some space inside the div */
+    flex: 1;
+    /* display: flex; */
+    /* align-items: left;  Vertical alignment */
+    /* justify-content: center; */
+    border: 2px dashed var(--text-color); /* Adjust the color and size as needed */
+    margin: 0.25rem 0.5rem;
+    padding: 0.25rem 0.5rem; /* Adds some space inside the div */
 }
 
-#results.multiple-results {
-    display: block;
-    align-items: flex-start;
-    justify-content: flex-start;
+#results p {
+    margin: 0.25rem 0rem; /* Adjust the top and bottom margin as needed */
+    padding: 0; /* Adjust padding if necessary */
+    text-align: left; /* Align text to the left */
 }
 
-.person-result:not(:last-child) {
-    margin-bottom: 1rem; /* Adjust the value as needed for desired spacing */
+#results .result {
+    margin-bottom: 1rem; /* Adjust this value to change the gap between results */
+    width: 100%; /* Ensures the result takes the full width */
 }
 
-/* ~~~~~ Footer ~~~~~ */
 footer {
     grid-area: footer;
-    padding: 1rem 2rem;
-    font-size: 16px;
+    padding: 0.25rem 1rem;
+    font-size: large;
 }
 
-@media (max-width: 700px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .nav-links li {
-        width: 100%; /* Make each link full width to stack them vertically */
+/* Responsive layout for screens less than 600px */
+@media (max-width: 500px) {
+    #container {
+        grid-template-areas:
+        "header header header header"
+        "main main main main"
+        "sidebar footer footer footer";
     }
 
-    /* Center the text of the links */
-    .nav-links a {
-        width: 100%;
-        text-align: center; /* Center the text inside the anchor tags */
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
     }
 }

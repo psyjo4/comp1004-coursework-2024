@@ -8,7 +8,7 @@ const websiteURL = 'http://127.0.0.1:5500/pages/';
 
 // Go to the website home page before each test.
 test.beforeEach(async ({ page }) => {
-   await page.goto(websiteURL);
+   await page.goto(websiteURL + 'people.html');
 });
 
 // # html tests

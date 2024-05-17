@@ -3,53 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A web application for searching people and vehicles, and adding new vehicle records.">
-    <title>Document</title>
+    <meta name="description" content="A web application for searching people, vehicles, and adding new vehicle records.">
+    <title>COMP1004 CW</title>
 
     <!-- ~~~~~ Links ~~~~~ -->
     <!-- <link rel="icon" href="../images/favicon.ico" type="image/x-icon"> -->
-    <link rel="stylesheet" href="../styles/styles.css">
-    <script src="../scripts/supabase.js" type="module" defer></script>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/scripts/people.js" type="module" defer></script>
 </head>
 <body>
-    <header>
-        <!-- ~~~~~ Header ~~~~~ -->
-        <h1 class="header-title">Search People</h1>
-        <nav aria-label="Main navigation">
-            <ul class="nav-links">
-                <li><a class="active" href="#">People Search</a></li>
-                <li><a href="vehicle.html">Vehicle Search</a></li>
-                <li><a href="register.html">Add a Vehicle</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="container">
+        <header>
+            <!-- ~~~~~ Header ~~~~~ -->
+            <h1>People Search</h1>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a class="active" href="#">People Search</a></li>
+                    <li><a href="vehicle.html">Vehicle Search</a></li>
+                    <li><a href="register.html">Add a Vehicle</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <aside class="sidebar">
-        <!-- ~~~~~ Sidebar ~~~~~ -->
-        <img class="database-logo"src="../images/database-icon.png" alt="Database Icon">
-    </aside>
+        <aside class="sidebar">
+            <!-- ~~~~~ Sidebar ~~~~~ -->
+            <img class="database-logo"src="/images/database-icon.png" alt="Database Icon">
+        </aside>
 
-    <main class="main-content">
-        <!-- ~~~~~ Main ~~~~~ -->
-        <form method="get" id="search-form">
-            <fieldset>
-                <label for="name-input">Search by driver name:</label>
-                <input type="text" id="name-input" placeholder="Rachel Smith..." name="name-input">
-                
-                <label for="licence-input">Search by driver licence number:</label>
-                <input type="text" id="licence-input" placeholder="SG345PQ..." name="licence-input">
-            </fieldset>
+        <main class="main-content">
+            <!-- ~~~~~ Main ~~~~~ -->
+            <form method="get" id="people-search-form">
+                <fieldset>
+                    <label for="name">Search by driver name:</label>
+                    <input type="text" id="name" placeholder="Rachel Smith..." name="name">
+                    <label for="license">Search by driver license number:</label>
+                    <input type="text" id="license" placeholder="SG345PQ..." name="license">
+                </fieldset>
+                <input type="submit" value="Submit">
+            </form>
+            <div id="message">Please enter a search.</div>
+            <div id="results">
+                <p></p>
+            </div>
+        </main>
 
-            <input type="submit" value="Submit">
-        </form>
-        <div id="results">
-            <p>Please enter a search.</p>
-        </div>
-    </main>
-
-    <footer>
-        <!-- ~~~~~ Footer ~~~~~ -->
-        <p>This is a sample for the COMP1004 coursework.</p>
-    </footer>
+        <footer>
+            <!-- ~~~~~ Footer ~~~~~ -->
+            <p>This is a sample for the COMP1004 coursework.</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>People and Vehicle Search</title>
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="A web application for searching people and vehicles, and adding new vehicle records.">
-
+    <meta name="description" content="A web application for searching people, vehicles, and adding new vehicle records.">
+    <title>COMP1004 CW</title>
+    
     <!-- ~~~~~ Links ~~~~~ -->
-    <link rel="stylesheet" href="../styles/styles.css">
-    <script src="../scripts/vehicle-search.js" type="module" defer></script>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/scripts/vehicle.js" type="module" defer></script>
 </head>
 <body>
+    <div id="container">
     <header>
         <!-- ~~~~~ Header ~~~~~ -->
-        <h1 class="header-title">Vehicle Search</h1>
+        <h1>Vehicle Search</h1>
         <nav aria-label="Main navigation">
-            <ul class="nav-links">
+            <ul>
                 <li><a href="people.html">People Search</a></li>
                 <li><a class="active" href="#">Vehicle Search</a></li>
                 <li><a  href="register.html">Add a Vehicle</a></li>
@@ -34,14 +33,14 @@
         <!-- ~~~~~ Main ~~~~~ -->
         <form method="get" id="vehicle-search-form">
             <fieldset>
-                <label for="registration-number">Search by vehicle registration number:</label>
-                <input type="text" id="registration-number" placeholder="GHT56FN..." name="registration-number">
+                <label for="rego">Search by vehicle registration number:</label>
+                <input type="text" id="rego" placeholder="GHT56FN..." name="rego">
             </fieldset>
-            
-            <input type="submit" value="Search">
+            <input type="submit" value="Submit">
         </form>
+        <div id="message">Please enter a search.</div>
         <div id="results">
-            <p>Please enter a search.</p>
+            <p></p>
         </div>
     </main>
 
@@ -49,5 +48,6 @@
         <!-- ~~~~~ Footer ~~~~~ -->
         <p>This is a sample for the COMP1004 coursework.</p>
     </footer>
+    </div>
 </body>
 </html>
